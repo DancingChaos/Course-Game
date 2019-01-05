@@ -5,10 +5,11 @@ sf::View view;//объявили sfml объект "вид", который и является камерой
 
 void getplayercoordinateforview(float x, float y) { //функция для считывания координат игрока
 	float tempX = x; float tempY = y;//считываем коорд игрока и проверяем их, чтобы убрать края
-
-	if (x < 320) tempX = 320;//убираем из вида левую сторону
-	if (y < 240) tempY = 240;//верхнюю сторону
-	if (y > 554) tempY = 554;//нижнюю сторону	
+    //убираем из вида
+	if (x < 320) tempX = 320;//левую сторону
+	if (x > 965) tempX = 965;//правую сторону
+	if (y < 236) tempY = 236;//верхнюю сторону
+	if (y > 605) tempY = 605;//нижнюю сторону	
 
 	view.setCenter(tempX, tempY); //следим за игроком, передавая его координаты. 
 
@@ -19,33 +20,30 @@ void viewmap(float time) { //функция для перемещения камеры по карте. принимает 
 
 
 	if (Keyboard::isKeyPressed(Keyboard::D)) {
-		view.move(0.1*time, 0);//скроллим карту вправо (см урок, когда мы двигали героя - всё тоже самое)
+		view.move(0.1*time, 0);//скроллим карту вправо
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::S)) {
-		view.move(0, 0.1*time);//скроллим карту вниз (см урок, когда мы двигали героя - всё тоже самое)
+		view.move(0, 0.1*time);//скроллим карту вниз
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::A)) {
-		view.move(-0.1*time, 0);//скроллим карту влево (см урок, когда мы двигали героя - всё тоже самое)
+		view.move(-0.1*time, 0);//скроллим карту влево
 	}
 	if (Keyboard::isKeyPressed(Keyboard::W)) {
-		view.move(0, -0.1*time);//скроллим карту вправо (см урок, когда мы двигали героя - всё тоже самое)
+		view.move(0, -0.1*time);//скроллим карту вправо 
 	}
 
 }
 
 void changeview() {
 
-
 	if (Keyboard::isKeyPressed(Keyboard::U)) {
 		view.zoom(1.0100f); //масштабируем, уменьшение
 							//view.zoom(1.0006f); //тоже самое помедленнее соответственно
 	}
-
 	if (Keyboard::isKeyPressed(Keyboard::R)) {
-		//view.setRotation(90);//сразу же задает поворот камере
-		view.rotate(1);//постепенно поворачивает камеру (отрицательное значение - в обратную сторону)
+		view.setRotation(90);//сразу же задает поворот камере
 	}
 
 
