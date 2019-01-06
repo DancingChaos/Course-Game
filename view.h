@@ -54,8 +54,6 @@ void changeview() {
 	if (Keyboard::isKeyPressed(Keyboard::P)) {
 		view.setSize(540, 380);//например другой размер
 	}
-
-
 	if (Keyboard::isKeyPressed(Keyboard::Q)) {
 		view.setViewport(sf::FloatRect(0, 0, 0.5f, 1));//таким образом делается раздельный экран для игры на двоих. нужно только создать ещё один объект View и привязывать к нему координаты игрока 2.
 	}

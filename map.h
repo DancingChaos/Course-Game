@@ -10,7 +10,7 @@ sf::String TileMap[HEIGHT_MAP] = {
 	"0    w       w                           w                                                                              w                                      0",
 	"0          f       f                     w                                                                              w                                      0",
 	"0                                        w                                                                              w                                      0",
-	"0                                        w                                                                              w                                      0",
+	"0         ww                             w                                                                              w                                      0",
 	"0                                        w                                                                              w                                      0",
 	"0                                        w                                                                              w                                      0",
 	"0                                        w                                                                              w                                      0",

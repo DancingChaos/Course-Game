@@ -19,10 +19,10 @@ std::string getTextMission(int currentMission) {
 
 	switch (currentMission)//принимается номер миссии и в зависимости от него переменной missionText присваивается различный текст
 	{
-	case 0: missionText = "\nМиссия : \nСобери 5 кристалов"; break;
-	case 1: missionText = "\nМиссия : \nПройти лабиринт"; break;
-	case 2: missionText = "\nМиссия : \nУбей толпу зомби"; break;
-	case 3: missionText = "\nМиссия : \nБосс"; break;
+	case 0: missionText = "\n Собери 5 кристалов"; break;
+	case 1: missionText = "\n Пройти лабиринт"; break;
+	case 2: missionText = "\n Убей толпу зомби"; break;
+	case 3: missionText = "\n Босс"; break;
 	}
 	return missionText;//ф-ция возвращает текст
 };
