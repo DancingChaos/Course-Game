@@ -1,4 +1,5 @@
 #include <SFML\Graphics.hpp>
+#include <iostream>
 const int HEIGHT_MAP = 40;//размер карты высота
 const int WIDTH_MAP = 76;//размер карты ширина 
 
@@ -11,8 +12,8 @@ sf::String TileMap[HEIGHT_MAP] = {
 	"00                  f001111111111111111111111111111111111111111111111111111",
 	"00                  f001111111111111111111111111111111111111111111111111111",
 	"00ffffffffffffffff  f001111111111111111111111111111111111111111111111111111",
-	"000000000000000000  f000000000000000000000000000000000000000000000000000001",
-	"000000000000000000  f000000000000000000000000000000000000000000000000000001",
+	"000000000000000000  f000000000000000000000000000000000000000000000000000000",
+	"000000000000000000  f000000000000000000000000000000000000000000000000000000",
 	"111111111111111100                                                       00",
 	"111111111111111100                                                       00",
 	"111111111111111100   ffffffffffffffffffffffffffffffffffffff   fffffffffff00",
@@ -49,22 +50,21 @@ void randomMapGenerate() {//рандомно расставляем камни
 
 	int randomElementX = 0;//случайный элемент по горизонтали
 	int randomElementY = 0;//случ эл-т по вертикали
-	srand(time(0));//рандом	
-	int ObjectsCount = 1;//количество обьектов
 
-	while (ObjectsCount > 0) {
-		randomElementX = 1 + rand() % (WIDTH_MAP - 1);
-		randomElementY = 1 + rand() % (HEIGHT_MAP - 1);
-		if (TileMap[randomElementY][randomElementX] == ' ') {
-			TileMap[randomElementY][randomElementX] = 's'; 
-			ObjectsCount--;
-		}
-		srand(time(0));
-		randomElementX = 1 + rand() % (WIDTH_MAP - 1);
-		randomElementY = 1 + rand() % (HEIGHT_MAP - 1);
-		if (TileMap[randomElementY][randomElementX] == ' ') {
-			TileMap[randomElementY][randomElementX] = 'h';
-			ObjectsCount--;
-		}
+	
+	randomElementX = 1 + rand() % (WIDTH_MAP - 1);
+	randomElementY = 1 + rand() % (HEIGHT_MAP - 1);
+	std::cout << randomElementX << " " << randomElementY << std::endl;
+
+	if (TileMap[randomElementY][randomElementX] == ' ') {
+		TileMap[randomElementY][randomElementX] = 's'; 
 	}
+
+	randomElementX = 1 + rand() % (WIDTH_MAP - 1);
+	randomElementY = 1 + rand() % (HEIGHT_MAP - 1);
+	std::cout << randomElementX << " " << randomElementY << std::endl;
+	if (TileMap[randomElementY][randomElementX] == ' ') {
+		TileMap[randomElementY][randomElementX] = 'h';
+	}
+	
 }
